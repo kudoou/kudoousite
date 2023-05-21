@@ -29,11 +29,9 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] =True
 app.config['UPLOAD_FOLDER'] = './static/profile_pics'
 
-
 # menetapkan kunci rahasia untuk kode jwt
-SECRET_KEY ='KUDOOU'
-
-TOKEN_KEY ='mytoken'
+TOKEN_KEY = os.environ.get("TOKEN_KEY")
+SECRET_KEY =  os.environ.get("SECRET_KEY")
 
 
 #kenp route '/',karena mytokennya masih kosong jadi harus masuk dlu ke loggin untuk membentuk token 
